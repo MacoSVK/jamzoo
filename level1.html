@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, viewport-fit=cover, minimal-ui">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>Jamzoo</title> 
+
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <script src="http://code.createjs.com/soundjs-0.5.2.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.js"></script>
+  <script src="js/script.js"></script>
+
+</head>
+
+<body id="index1">
+  <div class="rotate">
+  <img loading="lazy" src="img/rotate.png" width="200px" id="rotate">
+</div>
+<section id="main">
+<div class="starter">
+  <img loading="lazy" src="img/headphones.png" width="300px" class="warning">
+</div>
+<div class="starter2" onclick="start()">
+</div>
+<div class="loading">
+<div class="spinner-border text-warning" role="status">
+  <span class="sr-only">Loading...</span>
+</div>
+</div>
+<div class="nadpis">
+</div>
+  <div class="levely">
+    <div class="levely-content">
+      <a href="level1.html"><div id="container-level" onclick="level1()">
+        <img loading="lazy" src="img/logo1.png" width="110px" class="level-logo">
+        <i class="fab fa-itunes-note vzadu"></i>
+        <i class="fab fa-itunes-note level1"></i>
+        <div id="disc-level"></div>
+      </div></a>
+      <a href="level2.html"><div id="container-level" class="leveloffset" onclick="level3()">
+        <img loading="lazy" src="img/logo3.png" width="110px" class="level-logo">
+        <i class="fab fa-itunes-note vzadu"></i>
+        <i class="fab fa-itunes-note level2"></i>
+        <div id="disc-level"></div>
+      </div></a>
+      <a href="level3.html"><div id="container-level" class="leveloffset2" onclick="level2()">
+        <img loading="lazy" src="img/logo2.png" width="110px" class="level-logo">
+        <i class="fab fa-itunes-note vzadu"></i>
+        <i class="fab fa-itunes-note level3"></i>
+        <div id="disc-level"></div>
+      </div></a>
+      <a href="level4.html"><div id="container-level" class="level-box2" onclick="level4()">
+        <img loading="lazy" src="img/logo4.png" width="110px" class="level-logo">
+        <i class="fab fa-itunes-note vzadu"></i>
+        <i class="fab fa-itunes-note level4"></i>
+        <div id="disc-level"></div>
+      </div></a>
+    </div>
+  </div>
+  <div class="infocontent">
+    <div class="infomenu">
+      <a onclick="info1()" id="infoa1" class="active">GUIDE</a>
+    </div>
+    <img loading="lazy" src="img/info1.jpg" id="info1" class="infoimage">
+  </div>
+  <div class="background" onclick="schovat()">
+  </div>
+  <div class="reset" onclick="reset1()">
+    <i class="fas fa-play pause"></i>
+  </div>
+  <div class="nastavenia-bg">
+  </div>
+  <div class="nastavenia">
+    <ul class="list-inline list-social">
+        <li class="list-inline-item social-facebook">
+          <a onclick="reset()" href="#">
+            <i class="fas fa-pause info3"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-facebook">
+          <a href="level1.html">
+            <i class="fas fa-sync-alt info2"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-facebook">
+          <a onclick="info()" href="#">
+            <i class="fas fa-info info"></i>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <div class="exit">
+    <ul class="list-inline list-social">
+        <li class="list-inline-item social-facebook">
+          <a href="index.html">
+            <i class="fas fa-home"></i>
+          </a>
+        </li>
+        <li class="list-inline-item social-facebook">
+          <a href="#" onclick="levely()">
+            <i class="fas fa-compact-disc"></i>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <div class="center2">
+  <div class="postavy">
+    <div class="highlight" onclick="highlight()"></div>
+    <div id="disc1" class="elem"></div>
+    <div id="disc2" class="elem odsadenie"></div>
+    <div id="disc3" class="elem odsadenie1"></div>
+    <div id="disc4" class="elem odsadenie2"></div>
+    <div id="disc5" class="elem odsadenie3"></div>
+  </div>
+  <img loading="lazy" src="img/logo1.png" width="300px" id="logolevel1">
+  <div class="notes">
+  <div class="noot-1">
+  &#9835; &#9833;
+</div>
+<div class="noot-2">
+  &#9833;
+</div>
+<div class="noot-3">
+  &#9839; &#9834;
+</div>
+<div class="noot-4">
+  &#9834;
+</div>
+<div class="noot-5">
+  &#9835; &#9833;
+</div>
+<div class="noot-6">
+  &#9833;
+</div>
+</div>
+<audio id="myAudio">
+  <source src="sound1.wav" type="audio/wav">
+</audio>
+<div class="center3">
+<div class="nastaveniazvuku">
+  <div class="sekcia1">
+    <div class="sekcia" id="options1-1">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound11()" class="mute1"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound1111()" class="mute111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight1()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound111(), odobrat1()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-2">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound22()" class="mute2"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound2222()" class="mute22"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight2()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound222(), odobrat2()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-3">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound33()" class="mute3"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound3333()" class="mute33"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight3()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound333(), odobrat3()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-4">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound44()" class="mute4"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound4444()" class="mute44"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight4()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound444(), odobrat4()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-5">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound55()" class="mute5"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound5555()" class="mute55"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight5()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound555(), odobrat5()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-6">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound66()" class="mute6"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound6666()" class="mute66"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight6()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound666(), odobrat6()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-7">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound77()" class="mute7"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound7777()" class="mute77"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight7()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound777(), odobrat7()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-8">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound88()" class="mute8"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound8888()" class="mute88"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight8()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound888(), odobrat8()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-9">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound99()" class="mute9"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound9999()" class="mute99"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight9()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound999(), odobrat9()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-10">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound00()" class="mute10"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound0000()" class="mute1010"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight10()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound000(), odobrat10()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-11">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd11()" class="mute11"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd1111()" class="mute1111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight11()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd111(), odobrat11()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-12">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd22()" class="mute12"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd2222()" class="mute1212"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight12()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd222(), odobrat12()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-13">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd33()" class="mute13"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd3333()" class="mute1313"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight13()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd333(), odobrat13()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options1-14">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd44()" class="mute14"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd4444()" class="mute1414"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight14()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd444(), odobrat14()"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+  <div class="sekcia2">
+    <div class="sekcia" id="options2-1">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound11()" class="mute1"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound1111()" class="mute111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight1()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound111(), odobrat1()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-2">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound22()" class="mute2"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound2222()" class="mute22"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight2()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound222(), odobrat2()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-3">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound33()" class="mute3"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound3333()" class="mute33"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight3()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound333(), odobrat3()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-4">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound44()" class="mute4"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound4444()" class="mute44"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight4()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound444(), odobrat4()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-5">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound55()" class="mute5"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound5555()" class="mute55"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight5()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound555(), odobrat5()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-6">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound66()" class="mute6"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound6666()" class="mute66"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight6()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound666(), odobrat6()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-7">
+      <a onclick="sound77()" class="mute7"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound7777()" class="mute77"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight7()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound777(), odobrat7()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-8">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound88()" class="mute8"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound8888()" class="mute88"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight8()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound888(), odobrat8()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-9">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound99()" class="mute9"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound9999()" class="mute99"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight9()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound999(), odobrat9()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-10">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound00()" class="mute10"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound0000()" class="mute1010"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight10()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound000(), odobrat10()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-11">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd11()" class="mute11"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd1111()" class="mute1111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight11()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd111(), odobrat11()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-12">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd22()" class="mute12"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd2222()" class="mute1212"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight12()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd222(), odobrat12()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-13">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd33()" class="mute13"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd3333()" class="mute1313"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight13()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd333(), odobrat13()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options2-14">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd44()" class="mute14"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd4444()" class="mute1414"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight14()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd444(), odobrat14()"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+
+  <div class="sekcia3">
+    <div class="sekcia" id="options3-1">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound11()" class="mute1"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound1111()" class="mute111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight1()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound111(), odobrat1()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-2">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound22()" class="mute2"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound2222()" class="mute22"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight2()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound222(), odobrat2()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-3">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound33()" class="mute3"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound3333()" class="mute33"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight3()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound333(), odobrat3()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-4">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound44()" class="mute4"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound4444()" class="mute44"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight4()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound444(), odobrat4()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-5">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound55()" class="mute5"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound5555()" class="mute55"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight5()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound555(), odobrat5()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-6">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound66()" class="mute6"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound6666()" class="mute66"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight6()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound666(), odobrat6()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-7">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound77()" class="mute7"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound7777()" class="mute77"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight7()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound777(), odobrat7()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-8">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound88()" class="mute8"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound8888()" class="mute88"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight8()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound888(), odobrat8()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-9">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound99()" class="mute9"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound9999()" class="mute99"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight9()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound999(), odobrat9()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-10">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound00()" class="mute10"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound0000()" class="mute1010"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight10()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound000(), odobrat10()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-11">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd11()" class="mute11"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd1111()" class="mute1111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight11()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd111(), odobrat11()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-12">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd22()" class="mute12"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd2222()" class="mute1212"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight12()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd222(), odobrat12()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-13">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd33()" class="mute13"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd3333()" class="mute1313"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight13()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd333(), odobrat13()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options3-14">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd44()" class="mute14"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd4444()" class="mute1414"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight14()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd444(), odobrat14()"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+
+  <div class="sekcia4">
+    <div class="sekcia" id="options4-1">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound11()" class="mute1"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound1111()" class="mute111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight1()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound111(), odobrat1()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-2">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound22()" class="mute2"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound2222()" class="mute22"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight2()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound222(), odobrat2()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-3">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound33()" class="mute3"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound3333()" class="mute33"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight3()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound333(), odobrat3()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-4">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound44()" class="mute4"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound4444()" class="mute44"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight4()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound444(), odobrat4()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-5">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound55()" class="mute5"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound5555()" class="mute55"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight5()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound555(), odobrat5()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-6">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound66()" class="mute6"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound6666()" class="mute66"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight6()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound666(), odobrat6()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-7">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound77()" class="mute7"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound7777()" class="mute77"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight7()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound777(), odobrat7()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-8">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound88()" class="mute8"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound8888()" class="mute88"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight8()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound888(), odobrat8()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-9">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound99()" class="mute9"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound9999()" class="mute99"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight9()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound999(), odobrat9()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-10">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound00()" class="mute10"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound0000()" class="mute1010"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight10()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound000(), odobrat10()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-11">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd11()" class="mute11"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd1111()" class="mute1111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight11()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd111(), odobrat11()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-12">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd22()" class="mute12"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd2222()" class="mute1212"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight12()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd222(), odobrat12()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-13">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd33()" class="mute13"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd3333()" class="mute1313"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight13()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd333(), odobrat13()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options4-14">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd44()" class="mute14"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd4444()" class="mute1414"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight14()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd444(), odobrat14()"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+
+  <div class="sekcia5">
+    <div class="sekcia" id="options5-1">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound11()" class="mute1"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound1111()" class="mute111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight1()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound111(), odobrat1()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-2">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound22()" class="mute2"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound2222()" class="mute22"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight2()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound222(), odobrat2()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-3">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound33()" class="mute3"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound3333()" class="mute33"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight3()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound333(), odobrat3()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-4">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound44()" class="mute4"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound4444()" class="mute44"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight4()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound444(), odobrat4()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-5">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound55()" class="mute5"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound5555()" class="mute55"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight5()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound555(), odobrat5()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-6">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound66()" class="mute6"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound6666()" class="mute66"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight6()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound666(), odobrat6()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-7">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound77()" class="mute7"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound7777()" class="mute77"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight7()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound777(), odobrat7()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-8">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound88()" class="mute8"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound8888()" class="mute88"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight8()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound888(), odobrat8()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-9">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound99()" class="mute9"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound9999()" class="mute99"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight9()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound999(), odobrat9()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-10">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="sound00()" class="mute10"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="sound0000()" class="mute1010"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight10()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="sound000(), odobrat10()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-11">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd11()" class="mute11"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd1111()" class="mute1111"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight11()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd111(), odobrat11()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-12">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd22()" class="mute12"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd2222()" class="mute1212"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight12()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd222(), odobrat12()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-13">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd33()" class="mute13"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd3333()" class="mute1313"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight13()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd333(), odobrat13()"><i class="fas fa-times"></i></a>
+    </div>
+    <div class="sekcia" id="options5-14">
+      <a onclick="highlight()"><i class="fas fa-headphones"></i></a>
+      <a onclick="soundd44()" class="mute14"><i class="fas fa-volume-mute"></i></a>
+      <a onclick="soundd4444()" class="mute1414"><i class="fas fa-volume-up"></i></a>
+      <a onclick="highlight14()"><i class="fas fa-headphones-alt"></i></a>
+      <a onclick="soundd444(), odobrat14()"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+
+  </div>
+</div>
+<div class="zvukyblock" onclick="highlight()">
+</div>
+  <div class="zvuky">
+    <div class="zvuky-content center">
+      <div class="zvuky-content1">
+        
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound1()"><div class="music" id="zvuk1"><i class="fas fa-compact-disc"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload1" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound111(), odobrat1()"><div id="zvuk111"><i class="fas fa-ban"></i></div></a>
+      </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound2()"><div class="music" id="zvuk2"><i class="fas fa-compact-disc"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload2" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound222(), odobrat2()"><div id="zvuk222"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound3()"><div class="music" id="zvuk3"><i class="fas fa-compact-disc"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload3" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound333(), odobrat3()"><div id="zvuk333"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound4()"><div class="music" id="zvuk4"><i class="fas fa-compact-disc"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload4" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound444(), odobrat4()"><div id="zvuk444"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound5()"><div class="music" id="zvuk5"><i class="fas fa-compact-disc"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload5" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound555(), odobrat5()"><div id="zvuk555"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound6()"><div class="vocal" id="zvuk6"><i class="fas fa-microphone"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload6" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound666(), odobrat6()"><div id="zvuk666"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound7()"><div class="vocal" id="zvuk7"><i class="fas fa-microphone"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload7" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound777(), odobrat7()"><div id="zvuk777"><i class="fas fa-ban"></i></div></a>
+    </div>
+  </div>
+  <div class="zvuky-content2">
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound8()"><div class="vocal" id="zvuk8"><i class="fas fa-microphone"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload8" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound888(), odobrat8()"><div id="zvuk888"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound9()"><div class="vocal" id="zvuk9"><i class="fas fa-microphone"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload9" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound999(), odobrat9()"><div id="zvuk999"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+      <div class="ml-3" style="display:inline-block">
+      <a onclick="sound10()"><div class="misc" id="zvuk0"><i class="fas fa-sliders-h"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload0" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="sound000(), odobrat10()"><div id="zvuk000"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+    <div class="ml-3" style="display:inline-block">
+      <a onclick="soundik11()"><div class="misc" id="zvukk1"><i class="fas fa-sliders-h"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload11" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="soundd111(), odobrat11()"><div id="zvukk111"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+    <div class="ml-3" style="display:inline-block">
+      <a onclick="sound12()"><div class="drums" id="zvukk2"><i class="fas fa-drum"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload12" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="soundd222(), odobrat12()"><div id="zvukk222"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+    <div class="ml-3" style="display:inline-block">
+      <a onclick="sound13()"><div class="drums" id="zvukk3"><i class="fas fa-drum"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload13" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="soundd333(), odobrat13()"><div id="zvukk333"><i class="fas fa-ban"></i></div></a>
+    </div>
+
+    <div class="ml-3" style="display:inline-block">
+      <a onclick="sound14()"><div class="drums" id="zvukk4"><i class="fas fa-drum"></i></div></a>
+        <div class="spinner-border text-light" id="zvukload14" role="status">
+          <span class="sr-only"></span>
+        </div>
+      <a onclick="soundd444(), odobrat14()"><div id="zvukk444"><i class="fas fa-ban"></i></div></a>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+
+</section>
+
+  <footer>
+
+  </footer>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+
+</html>
